@@ -22,6 +22,3 @@ while True:
         price_text = price_element.text
         print(price_text)
     five_seconds()
-# driver.close() 
-# while(True):
-#     pass
