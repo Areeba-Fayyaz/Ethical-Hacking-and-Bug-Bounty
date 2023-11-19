@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+</head>
+<body>
+    <p>This page is all about me </p>
+    <form action="/about-me" method="post">
+        <!-- XSS -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div>{{user_input | safe }}</div>
+    <!-- In Flask, the safe filter is used to display content as-is without escaping special characters, allowing developers to indicate that a particular string is safe from potential HTML injection attacks. -->
+</body>
+</html>
