@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register page</h1>
+    <form action="/register" method="post">
+        <!-- XSS -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" >
+
+        <label for="pswd">Password:</label>
+        <input type="password" id="pswd" name="pswd" >
+
+        <input type="submit" value="Submit">
+    </form>
+    <div>{{message | safe }}</div>
+    <!-- In Flask, the safe filter is used to display content as-is without escaping special characters, allowing developers to indicate that a particular string is safe from potential HTML injection attacks. -->
+</body>
+</html>
